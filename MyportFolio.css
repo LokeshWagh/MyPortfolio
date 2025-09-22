@@ -11,7 +11,6 @@
 }
 
 body{
-
     background-color: #000000;
     color: #ffffff;
 }
@@ -31,7 +30,7 @@ body{
       height: 0px;
       width: 5px;
       scroll-behavior: smooth;
-      
+     
 }
 ::-webkit-scrollbar-track{
     background:rgb(40, 39, 39);
@@ -51,7 +50,7 @@ body{
 }
 #header{
     width: 100%;
-    height: 30%;
+    height: 20%;
     background-size: cover;
     background-position: center;
 }
@@ -119,7 +118,7 @@ ul li a:hover{
    opacity: 0;
    animation: slideLeft 1s ease forwards ; 
    animation-delay: 1s;
-   
+    
 }
 
 #Text{
@@ -210,7 +209,8 @@ ul li a:hover{
         
     }
     #Home{
-        margin-top: -120px;
+        margin-top: unset;
+        overflow-y: hidden !important;
     }
     .active {
         opacity: 1;
@@ -273,24 +273,27 @@ ul li a:hover{
     0 0 10px cyan,0 0 30px cyan;
 }
 /* Second Section */
+
+
 #secContainter{
     
     margin: 50px 0px 0px 0px;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     width: 100vw;
-    height: 100vh;
-    padding: 10% 5%;
+    height: auto;
+    padding: 10% 2%;
+    overflow-y: hidden;
 }
 #img2{
     border: #000;
     border-radius: 5%;
-    height: 45vh;
-    width: 250px;   
-    box-shadow: 0 0 40px #1ca3bb;
+    height: unset;
+    width: 30%;   
+    box-shadow: 0 0 10px #1ca3bb;
     animation: slideTop 6s ease forwards ; 
-    animation-delay: 0s;
-    
+    animation-delay: 0s; 
 }
 
 #Parabout{
@@ -303,7 +306,7 @@ ul li a:hover{
 /* skill section  **********************************/
 /* */
 #Skill{
-    height: 100vh;
+    height: 100%;
     overflow-y: hidden;
 }
 .sk{
@@ -363,7 +366,7 @@ ul li a:hover{
     width: 70%;
     animation: jasc 11s;
 
- }
+}
  .bar .react{
     width: 50%;
     animation: react 13s;
@@ -438,37 +441,6 @@ small{
    animation-delay: calc(var(--i)*0.3s);
 }
 
-
-@media screen and (max-width: 570px) {
-    
-    #About{
-        height: 150vh;
-    }
-    #secContainter{
-        
-        display: block;
-        justify-content: center;
-        align-items: center;
-        padding-left: 10px;
-        margin: 0px;    
-    }
-     #img2{
-       margin-left: 30px;
-    }#Parabout{
-        padding-right: 30px;
-        margin: 0px;
-        width: 100vw;
-        position: absolute;
-    }  
-    #btn1{
-        width: 100px;
-        font-size: 11px;
-    }
-    .btn2{
-        width: 100px;
-        font-size: 11px;
-    }
-}
 
 
 @media screen and (max-width: 570px) {
@@ -566,11 +538,8 @@ small{
                  height: 100%;
                }
           
-    
-
 
 }
-
 
 /* Myeducation section ************************/
 #edu-row{
@@ -640,16 +609,16 @@ small{
           }
         .year{
             display: flex;
-          justify-content: space-between;
-          padding: 0px 0px 10px 0;
-          font-size: 20px;
+         justify-content: space-between;
+         padding: 0px 0px 10px 0;
+         font-size: 20px;
         }
         .year p{
             font-size: 20px;
           padding-top: 7px;
         }
         .content{
-          padding: 4px;
+         padding: 4px;
           border: 2px solid aqua; 
           border-radius: 9px;
         }
@@ -703,7 +672,6 @@ small{
     }
 }
 
-
 @keyframes slideLeft{
     0%{
         transform: translateX(100px);
@@ -735,8 +703,184 @@ small{
     }
 }
 
+/* Scroll Reveal Animations */
+.reveal-left,
+.reveal-right,
+.reveal-up {
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
 
+.reveal-left {
+    transform: translateX(-100px); /* Starts off-screen to the left */
+}
 
+.reveal-right {
+    transform: translateX(100px); /* Starts off-screen to the right */
+}
 
+.reveal-up {
+    transform: translateY(100px); /* Starts off-screen from the bottom */
+}
 
+.reveal-left.visible,
+.reveal-right.visible,
+.reveal-up.visible {
+    opacity: 1;
+    transform: translateX(0) translateY(0); /* Slides to normal position */
+}
 
+/* New Skills Section Styles */
+.technical-skills {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.technical-skills h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: rgb(27, 137, 206);
+}
+
+.skill-boxes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px; /* Adjusted for left margin effect */
+}
+
+.skill-box {
+    background-color: #111919;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 150px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 10px; /* 10px left margin */
+    margin-top: 30px;
+}
+
+.skill-box:first-child {
+    margin-left: 0; /* No left margin on first box */
+}
+
+.skill-box i {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.skill-box p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.skill-box:hover {
+    box-shadow: 0 4px 8px cyan; /* Cyan shadow on hover */
+    transform: translateY(-13px); /* Slight lift up on hover */
+    z-index: 99;
+    position: relative;
+}
+
+@media (max-width: 400px) {
+  #Skill {
+    height: auto !important;
+    overflow-y: hidden;
+    padding-bottom: 30px !important;
+
+  }
+
+  .skill-boxes {
+    flex-direction: column;
+    gap: 15px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .skill-box {
+    width: 70% !important;
+    margin-left: 0 !important;
+  }
+
+  .skillss {
+    width: 100% !important;
+    padding: 0 10px !important;
+    margin: 30px auto 0 auto !important;
+  }
+
+  .profe {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .box {
+    margin: 0 !important;
+    min-width: auto !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 600px) {
+#About {
+    min-height: auto;
+    height: auto;
+    padding-bottom: 32px;
+  }
+  #secContainter {
+    padding: 13px 2vw 0 2vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #img2 {
+    width: 70%;
+    max-width: 96vw;
+    margin: 0 auto 14px auto;
+  }
+  #Parabout {
+    width: 100%;
+    font-size: 14.5px;
+    text-align: center;
+
+  }
+}
+
+@media (max-width: 400px) {
+    #Home{
+        height: unset !important;
+    }
+    .divbtn1{
+            display: flex !important;
+            flex-direction: column !important;  
+            align-items: flex-start !important;
+            gap: 5px !important;
+            margin: 0 !important;
+        }  
+    #linkes {
+            margin-left: -18px;
+        }
+    
+    #btn1{
+            width: 25%;
+            margin-top: 10px;
+            font-size: 90%;
+        
+        }
+    .btn2{
+            width: 25%;
+            margin-top: 10px;
+            font-size: 90%;
+        }
+}
+
+    .btn2{
+             font-size: 80%;
+            font-weight: 900;
+    }
+    #btn1{
+            font-size: 80%;
+        font-weight: 900;
+        }

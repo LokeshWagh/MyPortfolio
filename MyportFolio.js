@@ -7,7 +7,7 @@ main.addEventListener("mousemove",function(dets){
 });
 //  for typing animationa    ****
 var typed2 = new Typed('.Skilll', {
-    strings: ['Full Stack Developer !', 'Content Creater !', 'FrontEnd Developer !'],
+    strings: ['React js Developer!', 'Node js Developer!', 'FrontEnd Developer!', 'Technical Blog Writter!', 'MERN Stack Developer!' , 'Web Design Competition winner!'],
     typeSpeed: 100,
     backSpeed: 10,
     loop: true
@@ -60,5 +60,24 @@ function toggleMenu() {
 }
 
 
+// Scroll Reveal Script
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('[class*="reveal-"]'); // Selects all reveal classes
 
-     
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible'); // Remove class when out of view to reset animation
+            }
+        });
+    }, {
+        threshold: 0.1 // Trigger when 10% of the section is visible (adjust if needed)
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+
