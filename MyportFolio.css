@@ -14,6 +14,13 @@ body{
     background-color: #000000;
     color: #ffffff;
 }
+html {
+  scrollbar-gutter: stable both-edges; /* prevents left/right layout shift */
+}
+html, body {
+  overflow-x: hidden; /* move from * to just the root */
+}
+
 .curser{
     width: 15px;
     height: 15px;
@@ -441,6 +448,27 @@ small{
    animation-delay: calc(var(--i)*0.3s);
 }
 
+/* Floating contact heading */
+.myskillHeading {
+  display: flex;              
+  justify-content: center;
+  animation: floatY 1s ease-in-out infinite alternate; /* smooth up/down loop */
+  text-shadow: 0 1px 0 #0a0a0a, 0 0 10px rgba(0,255,255,0.35); /* subtle glow */
+  margin-bottom: 3%;
+  font-size: 75px;
+}
+
+/* Keyframes: move a few pixels up and down */
+@keyframes floatY {                      /* define intermediate steps */
+  0%   { transform: translateY(-6px); }
+  50%  { transform: translateY(4px); }
+  100% { transform: translateY(-6px); }
+}
+
+/* Respect users that prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .myskillHeading { animation: none; }   /* stop continuous movement */
+}
 
 
 @media screen and (max-width: 570px) {
@@ -478,59 +506,92 @@ small{
 } 
 }
 /* My project sectiion */
+/* My project section */
 #project{
-     margin: 50px 0 50px 0;
-}
-#mainProject{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-flow: wrap;
-    padding: 80px 50px 40px 50px;
-    
-    width: 100vw;
+  margin: 50px 0 50px 0;
 }
 
+/* Use Grid: 3 columns desktop -> 2 -> 1 */
+#mainProject{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 1fr)); /* 3 cards in first row */
+  gap: 28px;
+  padding: 60px 5% 40px 5%;
+  width: 100%; /* was 100vw */
+  justify-items: center; /* center cards in their tracks */
+  align-items: stretch;  /* equal card heights per row */
+}
+
+/* Uniform card sizing */
 .eachproject{
-    width: 300px;
-    height: 100%;
-    border: 2px solid cyan;
-    border-radius: 20px;
+  width: 100%;
+  max-width: 320px;              /* consistent card width */
+  min-height: 420px;             /* consistent card height */
+  border: 2px solid cyan;
+  border-radius: 20px;
+  background: transparent;
+  display: flex;                 /* allow inner flex to fill height */
+  transition: transform .2s ease, box-shadow .25s ease;
 }
-.imgProject{
-    width: 200px;
-    height: 104px;
-    border-radius: 10px;
-}
+
+/* Card content fills card */
 .projectss{
-    padding: 30px 10px 30px 10px;
-    height: 100%;  
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;  
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
 }
+
+/* Consistent thumbnail sizing */
+.imgProject{
+
+  width: 90%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+/* Description block height for alignment */
 .projectdiscription{
-    padding-top: 20px;
+  margin-top: 16px;
+  text-align: center;
+  line-height: 1.4;
+  font-size: 14.5px;
+  min-height: 120px; /* keeps buttons aligned across cards */
 }
+
+/* Buttons */
 .pbtn{
-    width: 150px;
-    height: 40px;
-    font-size: 20px;
-    color: black;   
-    border: 2px solid black;
-    border-radius: 10px;
-    margin-top: 20px;
-    background: #278ab1;
-    box-shadow: 0 0 5px cyan,
-    0 0 2px cyan,0 0 10px cyan; 
+  width: 160px;
+  height: 40px;
+  font-size: 18px;
+  font-weight: 800;
+  color: black;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-top: 16px;
+  background: #278ab1;
+  box-shadow: 0 0 5px cyan, 0 0 2px cyan, 0 0 10px cyan;
 }
+
+/* Cyan hover shadow and lift */
 .eachproject:hover{
-    
-    box-shadow: 0 0 5px cyan,
-    0 0 25px cyan,0 0 10px cyan,
-    0 0 10px cyan,0 0 30px cyan;
+  transform: translateY(-6px);
+  box-shadow: 0 0 10px cyan, 0 0 5px rgba(0,255,255,0.6), 0 0 35px rgba(0,255,255,0.35);
 }
+
+/* Responsive rows: 2 columns medium, 1 column small */
+@media (max-width: 1200px){
+  #mainProject{ grid-template-columns: repeat(2, minmax(280px, 1fr)); }
+}
+@media (max-width: 600px){
+  #mainProject{ grid-template-columns: 1fr; }
+  .eachproject{ max-width: 96%; min-height: 400px; }
+}
+
 
 @media screen and (max-width: 570px) {
    
@@ -627,6 +688,133 @@ small{
         }
 
 }
+
+/* CONTACT */
+#contact{
+  padding: 60px 5% 40px 5%;
+  margin-top: 10%;
+}
+
+.contact-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;     /* 50% / 50% */
+  gap: 32px;
+  align-items: start;
+}
+
+/* .contact-left, .contact-right{ */
+  /* border: 2px solid cyan;
+  border-radius: 16px; */
+  /* padding: 24px;
+  background: transparent;
+  box-shadow: 0 0 5px cyan, 0 0 2px cyan, 0 0 10px cyan;
+} */
+
+
+.contact-left p{
+  line-height: 1.55;
+  margin: 8px 0;
+  font-size: 15.5px;
+}
+
+.map-wrap{
+  margin-top: 18px;
+  border-radius: 12px;
+  overflow: hidden;
+  /* box-shadow: 0 0 6px cyan; */
+}
+.map-wrap iframe{
+  width: 100%;
+  height: 280px;
+  border: 0;
+}
+
+/* Form */
+#contactForm{
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;              /* center inside right card */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+#contactForm label{
+  font-size: 14px;
+  color: #a7e9f0;
+}
+
+#contactForm input,
+#contactForm textarea{
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #278ab1;
+  background: #0a0f0f;
+  color: #fff;
+  outline: none;
+  transition: box-shadow .2s ease, border-color .2s ease;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus{
+  border-color: cyan;
+  box-shadow: 0 0 8px rgba(0,255,255,0.6);
+}
+
+.contact-btn{
+  margin-top: 8px;
+  width: 100%;
+}
+
+/* Status text */
+.status{
+  text-align: center;
+  font-size: 14px;
+  margin-top: 8px;
+  min-height: 20px;
+  color: #64ffda;
+}
+
+/* Hover shadow for contact cards
+.contact-left:hover,
+.contact-right:hover{
+  box-shadow: 0 0 10px cyan, 0 0 25px rgba(0,255,255,0.6), 0 0 35px rgba(0,255,255,0.35);
+} */
+
+/* Responsive: stack columns */
+@media (max-width: 900px){
+  .contact-grid{
+    grid-template-columns: 1fr;
+  }
+  .map-wrap iframe{
+    height: 240px;
+  }
+}
+
+/* Floating contact heading */
+.contactHeading {
+  display: inline-block;                 /* allow transform without affecting layout */
+  animation: floatY 1s ease-in-out infinite alternate; /* smooth up/down loop */
+  text-shadow: 0 1px 0 #0a0a0a, 0 0 10px rgba(0,255,255,0.35); /* subtle glow */
+  margin-bottom: 7%;
+  font-size: 75px;
+}
+
+/* Keyframes: move a few pixels up and down */
+@keyframes floatY {                      /* define intermediate steps */
+  0%   { transform: translateY(-6px); }
+  50%  { transform: translateY(4px); }
+  100% { transform: translateY(-6px); }
+}
+
+/* Respect users that prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .contactHeading { animation: none; }   /* stop continuous movement */
+}
+
+
 
 @keyframes glow{
     0%{
@@ -822,6 +1010,9 @@ small{
 }
 
 @media (max-width: 600px) {
+    body{
+        overflow: hidden !important;
+    }
 #About {
     min-height: auto;
     height: auto;
@@ -844,6 +1035,7 @@ small{
     width: 100%;
     font-size: 14.5px;
     text-align: center;
+    margin-left: -30px;
 
   }
 }
@@ -860,7 +1052,7 @@ small{
             margin: 0 !important;
         }  
     #linkes {
-            margin-left: -18px;
+            margin-left: 6px;
         }
     
     #btn1{
@@ -884,3 +1076,5 @@ small{
             font-size: 80%;
         font-weight: 900;
         }
+
+

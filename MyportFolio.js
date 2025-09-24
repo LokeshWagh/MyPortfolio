@@ -41,18 +41,27 @@ const section= document.querySelectorAll('section');
 const navlinkes=document.querySelectorAll('ul li a');
 
 
-window.onscroll=()=>{
-    let top= window.scrollY;
-    let offset=sec.offsetTop;
-    let height=sec.offsetHeight;
-    let id= sec.getAttribute('id');
-    if(top >= offset && top <offset + height){
-        navlinkes.forEach(links =>{
-            links.classList.remove('.active');
-            document.querySelectorAll('ul li a[href*= ' + id +']').classList.add('.active');
-        })
-    }
-}
+// Active nav link on scroll (fixed)
+(() => {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('ul li a');
+
+  window.addEventListener('scroll', () => {
+    const fromTop = window.scrollY + 100;
+    sections.forEach((sec) => {
+      const id = sec.id;
+      const top = sec.offsetTop;
+      const height = sec.offsetHeight;
+      const link = document.querySelector(`ul li a[href="#${id}"]`);
+      if (!link) return;
+      if (fromTop >= top && fromTop < top + height) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  });
+})();
+
 
 function toggleMenu() {
     const navLinks = document.getElementById("nav-links");
@@ -81,3 +90,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  emailjs.init({
+    publicKey: 'kAxWXdWSvXfvUql92',
+    limitRate: { id: 'portfolio', throttle: 1200 }
+  });
+});
+
+(() => {
+  const form = document.getElementById('contactForm');
+  const statusEl = document.getElementById('formStatus');
+  const submitBtn = form ? form.querySelector('button[type="submit"], .contact-btn') : null;
+  if (!form) return;
+
+  const SERVICE_ID = 'service_dj7u3aw';
+  const TEMPLATE_ID = 'template_uaelrxd';
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    statusEl.textContent = 'Sending...';
+    if (submitBtn) submitBtn.disabled = true;
+
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, '#contactForm')
+      .then(() => { statusEl.textContent = 'Thanks! Message sent successfully.'; form.reset(); })
+      .catch((err) => { console.error('EmailJS error:', err); statusEl.textContent = 'Failed to send. Please try again.'; })
+      .finally(() => { if (submitBtn) submitBtn.disabled = false; });
+  });
+})();

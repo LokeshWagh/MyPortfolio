@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Foldit:wght@200;500;900&family=Konkhmer+Sleokchher&family=Mooli&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="MyportFolio.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="MyportFolio.js" defer></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -21,10 +22,10 @@
                 <img src="logo.png" alt="not load" id="logo">
                 <i class='bx bx-menu-alt-right' id="menu" onclick="toggleMenu()"></i>
                 <ul id="nav-links">
-                    <li><a class="active" href="#Home">Home</a></li>
-                    <li><a href="#About">About</a></li>
-                    <li><a href="#Skill">Skills</a></li>
-                    <li><a href="#project">Projects</a></li>
+                    <li><a class="active" href="#About">About Me</a></li>
+                    <li><a href="#Skill">Skill</a></li>
+                    <li><a href="#project">My Projects</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
                     <li><a href="#Edu">Education</a></li>
                 </ul>
             </nav>
@@ -59,7 +60,7 @@
                 <br><br>
                 My academic journey has fueled my passion for transforming complex problems into elegant, user-centric digital solutions. I thrive on building dynamic and responsive web applications and possess a strong foundation in full-stack development.
                 <br><br>
-                <span style="color:#40ffb7; font-weight:bold;">Hashedbit Innovation Pvt Ltd</span> further honed my skills, where I contributed to client-facing websites using technologies like <span style="color:#61dafb;">React.js</span> and <span style="color:#7fd13b;">Node.js</span>.
+               <span style="color:#40ffb7; font-weight:bold;">Hashedbit Innovation Pvt Ltd</span>, where I previously worked as a Software Developer, contributing to client‑facing web applications using <span style="color:#61dafb;">React.js</span> and <span style="color:#7fd13b;">Node.js</span> with a focus on performance, code quality, and timely delivery.
                 <br><br>
                 My technical toolkit includes <b style="color:#f8d03e;">Java</b>, <b style="color:#f7df1e;">JavaScript</b>, <b style="color:#61dafb;">React.js</b>, <b style="color:#7fd13b;">Node.js</b>, <b style="color:#444;">Express.js</b>, <b style="color:#8b5cf6;">SQL</b>, and <b style="color:#43ffa0;">MongoDB</b>. I am driven by a passion for continuous learning and a desire to build applications that are not only functional but also impactful. As runner-up in a competitive web design competition, I have a proven eye for detail and a commitment to quality.
                 <br><br>
@@ -68,8 +69,8 @@
         </div><br>
     </section>
     <!-- Skill Section -->
-    <section id="Skill" class="reveal-right">
-        <h1 style="margin-top: 50px; font-size: 50px;"><center>My <span style="color: rgb(27, 137, 206); ">Skills</span></center></h1>
+    <section id="Skill" >
+        <h1  class="myskillHeading" style="margin-top: 50px; font-size: 50px;"><center>My <span style="color: rgb(27, 137, 206); ">Skills</span></center></h1>
         <div class="technical-skills">
             <h2>Technical Skills</h2>
             <div class="skill-boxes">
@@ -161,35 +162,171 @@
         </center>
     </section>
     <!-- Project Section -->
-    <section id="project" class="reveal-up">
-        <h1><center style="font-size: 50px;">My <span style="color: rgb(27, 137, 206);">Projects</span></center></h1>
-        <div id="mainProject" class="mainProject">
-            <div class="eachproject">
-                <center><div class="projectss">
-                    <img src="india.png" alt="Cattle" class="imgProject">
-                    <div class="projectdiscription">Knowledge checker the is Online Quiz Application where the quiz is end in 40 sec you have to answer it in this time period</div>
-                    <button class="pbtn"><a href="https://github.com/Lokeshwagh/quiz." style="color: #000;">Source code</a></button>
-                    <button class="pbtn"><a href="https://quizonhistoryofindia.netlify.app/" style="color: #000;">Link</a></button>
-                </div></center>
-            </div>
-            <div class="eachproject">
-                <center><div class="projectss">
-                    <img src="elerarn.jpg" alt="Cattle" class="imgProject">
-                    <div class="projectdiscription">LiveStock Cattle hub is online platform for selling the cow and buying the cow by the owner as well there is blogs on the cow</div>
-                    <button class="pbtn"><a href="https://github.com/Lokeshwagh/E_Learning-Management-System" style="color: #000;">Source code</a></button>
-                    <button class="pbtn"><a href="https://github.com/Lokeshwagh/E_Learning-Management-System" style="color: #000;">Source code</a></button>
-                </div></center>
-            </div>
-            <div class="eachproject">
-                <center><div class="projectss">
-                    <img src="cattleproject.png" alt="Cattle" class="imgProject">
-                    <div class="projectdiscription">LiveStock Cattle hub is online platform for selling the cow and buying the cow by the owner as well there is blogs on the cow</div>
-                    <button class="pbtn"><a href="https://github.com/Lokeshwagh/LiveStock-Cattlehub" style="color: #000;">Source code</a></button>
-                    <button class="pbtn"><a href="https://live-stock-r9vn-jg8rmowc2-team-ezic0dess-projects.vercel.app/" style="color: #000;">Link</a></button>
-                </div></center>
-            </div>
+<section id="project" class="reveal-up">
+  <h1>
+    <center style="font-size: 50px;">
+      My <span style="color: rgb(27, 137, 206);">Projects</span>
+    </center>
+  </h1>
+
+  <div id="mainProject" class="mainProject">
+    <!-- 1) Talent-Bridge (Placement Portal) -->
+    <div class="eachproject">
+      <center>
+        <div class="projectss">
+          <img src="./Assets//Talent-bridge.png" alt="Talent-Bridge Placement Portal" class="imgProject" />
+          <div class="projectdiscription">
+            Talent‑Bridge is a placement portal that helps job seekers prepare for placements and apply to curated roles with streamlined workflows, shortlists, and smart updates to keep preparation on track and applications organized.
+          </div>
+          <button class="pbtn">
+            <a href="https://github.com/LokeshWagh/TalentBridge" target="_blank" rel="noopener" style="color:#000;">Source code</a>
+          </button>
+          <button class="pbtn">
+            <a href="https://github.com/Lokeshwagh" target="_blank" rel="noopener" style="color:#000;">Link</a>
+          </button>
         </div>
-    </section>
+      </center>
+    </div>
+
+    <!-- 2) LiveStock Cattle Hub -->
+    <div class="eachproject">
+      <center>
+        <div class="projectss">
+          <img src="/Assets/livestock.png" alt="LiveStock Cattle Hub" class="imgProject" />
+          <div class="projectdiscription">
+            LiveStock Cattle Hub is a trusted digital marketplace where farmers and buyers can list, discover, and trade cattle with transparent details, verified profiles, and helpful blogs—bringing efficiency to a space dominated by offline markets.
+          </div>
+          <button class="pbtn">
+            <a href="https://github.com/Lokeshwagh/LiveStock-Cattlehub" target="_blank" rel="noopener" style="color:#000;">Source code</a>
+          </button>
+          <button class="pbtn">
+            <a href="https://live-stock-r9vn-jg8rmowc2-team-ezic0dess-projects.vercel.app/" target="_blank" rel="noopener" style="color:#000;">Link</a>
+          </button>
+        </div>
+      </center>
+    </div>
+
+    <!-- 3) E‑Learning Platform -->
+    <div class="eachproject">
+      <center>
+        <div class="projectss">
+          <img src="elerarn.jpg" alt="E‑Learning Platform" class="imgProject" />
+          <div class="projectdiscription">
+            A modular E‑Learning platform with course management, authenticated access, and structured content delivery for learners to progress through topics with clarity and pace.
+          </div>
+          <button class="pbtn">
+            <a href="https://github.com/Lokeshwagh/E_Learning-Management-System" target="_blank" rel="noopener" style="color:#000;">Source code</a>
+          </button>
+          <button class="pbtn">
+            <a href="https://github.com/Lokeshwagh/E_Learning-Management-System" target="_blank" rel="noopener" style="color:#000;">Link</a>
+          </button>
+        </div>
+      </center>
+    </div>
+
+    <!-- 4) Easyhunur (Technician Hiring Platform) -->
+    <div class="eachproject">
+      <center>
+        <div class="projectss">
+          <img src="easyhunur.png" alt="Easyhunur Technician Hiring" class="imgProject" />
+          <div class="projectdiscription">
+            Easyhunur is a digital platform to find and hire skilled technicians for home services with clear categories, simple booking, and responsive support for reliable on‑time service.
+          </div>
+          <button class="pbtn">
+            <a href="https://github.com/Lokeshwagh" target="_blank" rel="noopener" style="color:#000;">Source code</a>
+          </button>
+          <button class="pbtn">
+            <a href="https://easyhunur.com/" target="_blank" rel="noopener" style="color:#000;">Link</a>
+          </button>
+        </div>
+      </center>
+    </div>
+
+    <!-- 5) GitHub Profile Reviewer (AI) -->
+    <div class="eachproject">
+      <center>
+        <div class="projectss">
+          <img src="/Assets/githubProfileReview.png" alt="GitHub Profile Reviewer" class="imgProject" />
+          <div class="projectdiscription">
+            GitHub Profile Reviewer is an AI tool that generates practical, accurate feedback on GitHub profiles to help students and hiring teams quickly assess strengths, gaps, and next actions.
+          </div>
+          <button class="pbtn">
+            <a href="https://github.com/Lokeshwagh" target="_blank" rel="noopener" style="color:#000;">Source code</a>
+          </button>
+          <button class="pbtn">
+            <a href="https://githubprofilereviewer.vercel.app/" target="_blank" rel="noopener" style="color:#000;">Link</a>
+          </button>
+        </div>
+      </center>
+    </div>
+    <div class="eachproject">
+      <center>
+        <div class="projectss">
+          <img src="/Assets/india.png" alt="GitHub Profile Reviewer" class="imgProject" />
+          <div class="projectdiscription">
+            Knowledge checker the is Online Quiz Application where the quiz is end in 40 sec you have to answer it in this time period
+          </div>
+          <button class="pbtn">
+            <a href="https://github.com/Lokeshwagh" target="_blank" rel="noopener" style="color:#000;">Source code</a>
+          </button>
+          <button class="pbtn">
+            <a href="https://quizonhistoryofindia.netlify.app/" target="_blank" rel="noopener" style="color:#000;">Link</a>
+          </button>
+        </div>
+      </center>
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="reveal-right">
+    <center><h1 class="contactHeading" style="color:rgb(27,137,206);">Fill <span style="color: white;">Free To</span>  contact Me</h1>
+    </center>
+  <div class="contact-grid">
+    <!-- Left column -->
+    <div class="contact-left">
+    
+      <p>If there is a role that matches the skills and experience, please reach out to discuss how to collaborate effectively on deliverables and timelines.</p>
+      <p>If any project needs to be developed, feel free to contact to plan requirements, milestones, and launch strategy together.</p>
+      <p>Mobile No: +91 7249659025</p>
+      <p>Email: lokeshwagh675@gmail.com</p>
+
+      <!-- Amravati map (no API key) -->
+      <div class="map-wrap">
+        <iframe
+          title="Amravati Map"
+          src="https://www.google.com/maps?q=Amravati&z=12&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Right column -->
+   <div class="contact-right">
+    <form id="contactForm">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Full name" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="email@example.com" />
+
+        <label for="number">Number</label>
+        <input id="number" name="number" type="tel" placeholder="10-digit mobile" required pattern="[0-9]{10}" />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Write message..."></textarea>
+
+        <button type="submit" class="pbtn contact-btn">Contact</button>
+        <p id="formStatus" class="status" aria-live="polite"></p>
+    </form>
+   </div>
+
+  </div>
+</section>
+
     <!-- educational background -->
     <section class="edu" id="Edu" style="height: 110vh; overflow-y: hidden;padding-top: 40px; width: 100%;" class="reveal-left">
         <center><h1 style="font-size: 50px;">My <span style="color:#1ca3bb;">Education</span></h1>
@@ -199,21 +336,22 @@
                 <div class="content">
                     <div class="year">Bachler of Engineering
                     <p><i class='bx bxs-calendar'></i>2021-25</p></div>
-                    <p>I'm Currently parsuing B.E degree from <u><b><br> Sipna college of Engineering and technology</b></u><br> with 8+ Cgpa</p>
+                    <p>I'm Recent B.E Graduate from <br><span style="color:#e1f9ff;">Sipna college of Engineering and technology</span> <br> with 8.4 Cgpa</p>
                 </div>
             </div>
             <div class="edu-content">
                 <div class="content">
+                  
                     <div class="year">HSC Board
                     <p><i class='bx bxs-calendar'></i>2020-21</p></div>
-                    <p>I was done my Higher school Education From <br> Adarsh MahaVidyalay <u><b><br>86%</b></u> </p>
+                    <p>I was done my Higher school Education From <br><span style="color:#e1f9ff;">Adarsh MahaVidyalay</span>  <u><b><br>86%</b></u> </p>
                 </div>
             </div>
             <div class="edu-content">
                 <div class="content">
                     <div class="year">SSC board 10th
                     <p><i class='bx bxs-calendar'></i>2018-19 </p></div>
-                    <p>I was done My schooling From <br><b>S.F.L High school Dhamangaon Railway</b><u><b><br>78%</b></u><br></p>
+                    <p>I was done My schooling From <br><b style="color:#e1f9ff;">S.F.L High school Dhamangaon Railway</b><u><b><br>78%</b></u><br></p>
                 </div>
             </div>
         </div></center>
