@@ -41,6 +41,16 @@ const section= document.querySelectorAll('section');
 const navlinkes=document.querySelectorAll('ul li a');
 
 
+// CARD SECTI
+// let current = 1;
+// const total = 7;
+
+// setInterval(() => {
+//   current++;
+//   if (current > total) current = 1;
+//   document.getElementById(`radio-${current}`).checked = true;
+// }, 3000);
+
 // Active nav link on scroll (fixed)
 (() => {
   const sections = document.querySelectorAll('section[id]');
@@ -119,3 +129,28 @@ document.addEventListener('DOMContentLoaded', () => {
       .finally(() => { if (submitBtn) submitBtn.disabled = false; });
   });
 })();
+
+// Mouse follower effect
+const mouseBlob = document.getElementById('mouseBlob');
+let mouseX = 0;
+let mouseY = 0;
+let blobX = 0;
+let blobY = 0;
+
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+function animateBlob() {
+    // Smooth following effect
+    blobX += (mouseX - blobX) * 0.1;
+    blobY += (mouseY - blobY) * 0.1;
+    
+    mouseBlob.style.left = (blobX - 300) + 'px';
+    mouseBlob.style.top = (blobY - 300) + 'px';
+    
+    requestAnimationFrame(animateBlob);
+}
+
+animateBlob();

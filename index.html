@@ -1,360 +1,656 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="logotab.png" />
     <title>MyPortfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Foldit:wght@200;500;900&family=Konkhmer+Sleokchher&family=Mooli&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="MyportFolio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Foldit:wght@200;500;900&family=Konkhmer+Sleokchher&family=Mooli&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="MyportFolio.css" />
+
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="MyportFolio.js" defer></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<body id="body1">
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body id="body1">
+    <div class="gradient-container">
+    <!-- Top center shadow -->
+    <div class="top-shadow"></div>
+    
+    <!-- Floating gradient blobs -->
+    <div class="gradient-blob blob-1"></div>
+    <div class="gradient-blob blob-2"></div>
+    <div class="gradient-blob blob-3"></div>
+    
+    <!-- Mouse follower blob -->
+    <div class="mouse-blob" id="mouseBlob"></div>
+</div>
     <!-- Navigation bar of the portfolio -->
     <div id="header">
-        <div id="container">
-            <nav class="nav">
-                <img src="logo.png" alt="not load" id="logo">
-                <i class='bx bx-menu-alt-right' id="menu" onclick="toggleMenu()"></i>
-                <ul id="nav-links">
-                    <li><a class="active" href="#About">About Me</a></li>
-                    <li><a href="#Skill">Skill</a></li>
-                    <li><a href="#project">My Projects</a></li>
-                    <li><a href="#contact">Contact Me</a></li>
-                    <li><a href="#Edu">Education</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div id="container">
+        <nav class="nav">
+          <img src="logo.png" alt="not load" id="logo" />
+          <i class="bx bx-menu-alt-right" id="menu" onclick="toggleMenu()"></i>
+          <ul id="nav-links">
+            <li><a class="active" href="#About">About Me</a></li>
+            <li><a href="#Skill">Skill</a></li>
+            <li><a href="#project">My Projects</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+            <li><a href="#Edu">Education</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
     <!-- HOME PAGE -->
     <section id="Home">
-        <div class="head-text">
-            <div class="Text"><p style="font-size: 20px;">My <span style="color: rgb(27, 138, 125);">name</span> is</p>
-                <h1 style="font-size: 60px;">Lokesh wagh</h1>
-                <p style="font-size: 20px;">and I'm a <span class="Skilll" style="color: rgb(18, 237, 215);"></span></p>
-                <div id="linkes">
-                    <a href="https://www.linkedin.com/in/lokesh-wagh-bab067228/"><i class='bx bxl-linkedin' target="_blank"></i></a>
-                    <a href="https://github.com/Lokeshwagh" target="_blank"><i class='bx bxl-github'></i></a>
-                    <a href="https://www.instagram.com/lokeshwagh34/" target="_blank"><i class='bx bxl-instagram'></i></a>
-                    <a href="mailto:lokeshwagh675@gmail.com" target="_blank"><i class='bx bxl-gmail'></i></a>
-                </div>
-                <div class="divbtn1"><button id="btn1"><a href="#About" style="color: #000; text-decoration: none;">About More</a></button>
-                    <button class="btn2"><a href="./Assets/Lokeshwagh_Resume.pdf" download="" style="color: #000; text-decoration: none;" class="downCV">Download Resume</a></button>
-                </div>
-            </div>
+      <div class="head-text">
+        <div class="Text">
+          <p style="font-size: 20px">
+            My <span style="color: rgb(27, 138, 125)">name</span> is
+          </p>
+          <h1 style="font-size: 60px">Lokesh wagh</h1>
+          <p style="font-size: 20px">
+            and I'm a
+            <span class="Skilll" style="color: rgb(18, 237, 215)"></span>
+          </p>
+          <div id="linkes">
+            <a href="https://www.linkedin.com/in/lokesh-wagh-bab067228/"
+              ><i class="bx bxl-linkedin" target="_blank"></i
+            ></a>
+            <a href="https://github.com/Lokeshwagh" target="_blank"
+              ><i class="bx bxl-github"></i
+            ></a>
+            <a href="https://www.instagram.com/lokeshwagh34/" target="_blank"
+              ><i class="bx bxl-instagram"></i
+            ></a>
+            <a href="mailto:lokeshwagh675@gmail.com" target="_blank"
+              ><i class="bx bxl-gmail"></i
+            ></a>
+          </div>
+          <div class="divbtn1">
+            <button id="btn1">
+              <a href="#About" style="color: #000; text-decoration: none"
+                >About More</a
+              >
+            </button>
+            <button class="btn2">
+              <a
+                href="./Assets/Lokeshwagh_Resume.pdf"
+                download=""
+                style="color: #000; text-decoration: none"
+                class="downCV"
+                >Download Resume</a
+              >
+            </button>
+          </div>
         </div>
+      </div>
     </section>
     <!-- ABOUT SECTION -->
-    <section id="About" class="reveal-left">
-        <div id="secContainter">
-            <img src="./Assets/Untitled design (1).png" alt="image is not load" id="img2">
-            <p id="Parabout">
-                <span style="font-size: 40px; color: rgb(221,100,98);"><b>About Me</b></span><br>
-                <b><span style="font-size: 19px; color:#64ffda;">MERN Stack Developer</span></b><br><br>
-                Hello! I'm <span style="color:#18eaff; font-weight:bold;">Lokesh Wagh</span>, a recent and enthusiastic graduate from <span style="color:#00e6a8; font-weight:bold;">Sipna College of Engineering and Technology</span>, where I earned my Bachelor's degree in Computer Science and Engineering with a score of <span style="color:#fac858;"><b>73%</b></span>.Also I done 12th in Adarsha Mahavidyalaya with <span style="color:#fac858;"><b>86%</b></span>.and 10th in S.F.L High school Dhamangaon Railway with <span style="color:#fac858;"><b>78%</b></span>..
-                <br><br>
-                My academic journey has fueled my passion for transforming complex problems into elegant, user-centric digital solutions. I thrive on building dynamic and responsive web applications and possess a strong foundation in full-stack development.
-                <br><br>
-               <span style="color:#40ffb7; font-weight:bold;">Hashedbit Innovation Pvt Ltd</span>, where I previously worked as a Software Developer, contributing to client‑facing web applications using <span style="color:#61dafb;">React.js</span> and <span style="color:#7fd13b;">Node.js</span> with a focus on performance, code quality, and timely delivery.
-                <br><br>
-                My technical toolkit includes <b style="color:#f8d03e;">Java</b>, <b style="color:#f7df1e;">JavaScript</b>, <b style="color:#61dafb;">React.js</b>, <b style="color:#7fd13b;">Node.js</b>, <b style="color:#444;">Express.js</b>, <b style="color:#8b5cf6;">SQL</b>, and <b style="color:#43ffa0;">MongoDB</b>. I am driven by a passion for continuous learning and a desire to build applications that are not only functional but also impactful. As runner-up in a competitive web design competition, I have a proven eye for detail and a commitment to quality.
-                <br><br>
-                I am now eager to apply my skills and innovative mindset to a challenging role where I can contribute to building the technology of tomorrow.
-            </p>
-        </div><br>
+    <section id="About">
+      <div id="secContainter">
+        <div class="card-container">
+        <div class="card-wrapper" id="cardWrapper">
+            <div class="card">
+                <div class="card-bg" id="cardBg"></div>
+                <div class="card-overlay"></div>
+                <div class="card-glare"></div>
+                <div class="card-content">
+                    <h2 class="card-title">Lokesh</h2>
+                    <h2 class="card-subtitle">SDE</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+        <p id="Parabout">
+          <span style="font-size: 40px; color: rgb(221, 100, 98)"
+            ><b>About Me</b></span
+          ><br />
+          <b
+            ><span style="font-size: 19px; color: #64ffda"
+              >MERN Stack Developer</span
+            ></b
+          ><br /><br />
+          Hello! I'm
+          <span style="color: #18eaff; font-weight: bold">Lokesh Wagh</span>, a
+          recent and enthusiastic graduate from
+          <span style="color: #00e6a8; font-weight: bold"
+            >Sipna College of Engineering and Technology</span
+          >, where I earned my Bachelor's degree in Computer Science and
+          Engineering with a score of
+          <span style="color: #fac858"><b>73%</b></span
+          >.Also I done 12th in Adarsha Mahavidyalaya with
+          <span style="color: #fac858"><b>86%</b></span
+          >. <br /><br />
+          I'm a MERN Stack Developer who genuinely enjoys turning complex ideas into clean, user-focused web apps. I've worked as a Software Developer at <span style="color: #40ffb7; font-weight: bold" >Hashedbit Innovation Pvt. Ltd</span>, where I built real client-side applications Like <span  style="color: #5dff60" >Easyhunur</span> 
+          <span style="color: #ff9c45">FoodBox</span>
+          <span style="color: #ff16d8"></span>
+          and a proper production-focused workflow.
+          <br /><br />
+          My technical toolkit includes <b style="color: #f8d03e">Java, OOP</b>,
+          <b style="color: #f7df1e">JavaScript</b>,
+          <b style="color: #61dafb">React.js</b>,
+          <b style="color: #7fd13b">Node.js</b>,
+          <b style="color: #444">Express.js</b>,
+          <b style="color: #8b5cf6">SQL</b>, and
+          <b style="color: #43ffa0">MongoDB</b>. I am driven by a passion for
+          continuous learning and a desire to build applications that are not
+          only functional but also impactful. I'm runner-up in a competitive web
+          design competition, publish the React Paper about AI integrated Placement portal, Write the blog about trending topic. <br /><br />
+          I am now eager to apply my skills and innovative mindset to a
+          challenging role where I can contribute to building the technology of
+          tomorrow.
+        </p>
+      </div>
+      <br />
     </section>
     <!-- Skill Section -->
-    <section id="Skill" >
-        <h1  class="myskillHeading" style="margin-top: 50px; font-size: 50px;"><center>My <span style="color: rgb(27, 137, 206); ">Skills</span></center></h1>
-        <div class="technical-skills">
-            <h2>Technical Skills</h2>
-            <div class="skill-boxes">
-                <div class="skill-box">
-                    <i class='bx bxl-java' style="color: rgb(243, 243, 252); font-size: 40px;"></i>
-                    <p>Java</p>
-                </div>
-                <div class="skill-box">
-                    <i class='bx bxl-javascript' style="color: rgb(255, 255, 2); font-size: 40px;"></i>
-                    <p>JavaScript</p>
-                </div>
-                <div class="skill-box">
-                    <i class='bx bx-code-curly' style="color: #ffffff; font-size: 40px;"></i>
-                    <p>Object Oriented Programming</p>
-                </div>
-                <div class="skill-box">
-                    <i class='bx bxl-html5' style="color: rgb(231, 99, 6); font-size: 40px;"></i>
-                    <p>HTML5</p>
-                </div>
-                <div class="skill-box">
-                    <i class='bx bxl-css3' style="color: blueviolet; font-size: 40px;"></i>
-                    <p>CSS3</p>
-                </div>
-                <div class="skill-box">
-                    <i class='bx bxl-react' style="color: rgb(17, 199, 199); font-size: 40px;"></i>
-                    <p>React.js</p>
-                </div>
-                <div class="skill-box">
-                    <i class='bx bxl-bootstrap' style="color: #563d7c; font-size: 40px;"></i>
-                    <p>Bootstrap</p>
-                </div>
-                <div class="skill-box">
-                    <i class='bx bxl-tailwind-css' style="color: #06b6d4; font-size: 40px;"></i>
-                    <p>Tailwind CSS</p>
-                </div>
-                <div class="skill-box">
-                    <i class='bx bxl-nodejs' style="color: rgb(14, 163, 14); font-size: 40px;"></i>
-                    <p>Node.js</p>
-                </div>
-                <div class="skill-box">
-                    <i class='bx bx-server' style="color: #ffffff; font-size: 40px;"></i>
-                    <p>Express.js</p>
-                </div>
-                <div class="skill-box">
-                    <i class='bx bx-data' style="color: #ffffff; font-size: 40px;"></i>
-                    <p>SQL</p>
-                </div>
-                <div class="skill-box">
-                    <i class='bx bx-data' style="color: #ffffff; font-size: 40px;"></i>
-                    <p>NOSQL</p>
-                </div>
-                <div class="skill-box">
-                    <i class='bx bx-data' style="color: #ffffff; font-size: 40px;"></i>
-                    <p>MySQL</p>
-                </div>
-                <div class="skill-box">
-                    <i class='bx bxl-mongodb' style="color: #47a248; font-size: 40px;"></i>
-                    <p>MongoDB</p>
-                </div>
-                <div class="skill-box">
-                    <i class='bx bxl-git' style="color: #f34e1e; font-size: 40px;"></i>
-                    <p>Git</p>
-                </div>
-                <div class="skill-box">
-                    <i class='bx bxl-github' style="color: #ffffff; font-size: 40px;"></i>
-                    <p>GitHub</p>
-                </div>
-            </div>
+    <section id="Skill">
+      <h1 class="myskillHeading" style="margin-top: 50px; font-size: 50px">
+        <center>My <span style="color: rgb(27, 137, 206)">Skills</span></center>
+      </h1>
+      <div class="technical-skills">
+        <h2>Technical Skills</h2>
+        <div class="skill-boxes">
+          <div class="skill-box">
+            <i
+              class="bx bxl-java"
+              style="color: rgb(243, 243, 252); font-size: 40px"
+            ></i>
+            <p>Java</p>
+          </div>
+          <div class="skill-box">
+            <i
+              class="bx bxl-javascript"
+              style="color: rgb(255, 255, 2); font-size: 40px"
+            ></i>
+            <p>JavaScript</p>
+          </div>
+          <div class="skill-box">
+            <i
+              class="bx bx-code-curly"
+              style="color: #ffffff; font-size: 40px"
+            ></i>
+            <p>Object Oriented Programming</p>
+          </div>
+          <div class="skill-box">
+            <i
+              class="bx bxl-html5"
+              style="color: rgb(231, 99, 6); font-size: 40px"
+            ></i>
+            <p>HTML5</p>
+          </div>
+          <div class="skill-box">
+            <i
+              class="bx bxl-css3"
+              style="color: blueviolet; font-size: 40px"
+            ></i>
+            <p>CSS3</p>
+          </div>
+          <div class="skill-box">
+            <i
+              class="bx bxl-react"
+              style="color: rgb(17, 199, 199); font-size: 40px"
+            ></i>
+            <p>React.js</p>
+          </div>
+          <div class="skill-box">
+            <i
+              class="bx bxl-bootstrap"
+              style="color: #563d7c; font-size: 40px"
+            ></i>
+            <p>Bootstrap</p>
+          </div>
+          <div class="skill-box">
+            <i
+              class="bx bxl-tailwind-css"
+              style="color: #06b6d4; font-size: 40px"
+            ></i>
+            <p>Tailwind CSS</p>
+          </div>
+          <div class="skill-box">
+            <i
+              class="bx bxl-nodejs"
+              style="color: rgb(14, 163, 14); font-size: 40px"
+            ></i>
+            <p>Node.js</p>
+          </div>
+          <div class="skill-box">
+            <i class="bx bx-server" style="color: #ffffff; font-size: 40px"></i>
+            <p>Express.js</p>
+          </div>
+          <div class="skill-box">
+            <i class="bx bx-data" style="color: #ffffff; font-size: 40px"></i>
+            <p>SQL</p>
+          </div>
+          <div class="skill-box">
+            <i class="bx bx-data" style="color: #ffffff; font-size: 40px"></i>
+            <p>NOSQL</p>
+          </div>
+          <div class="skill-box">
+            <i class="bx bx-data" style="color: #ffffff; font-size: 40px"></i>
+            <p>MySQL</p>
+          </div>
+          <div class="skill-box">
+            <i
+              class="bx bxl-mongodb"
+              style="color: #47a248; font-size: 40px"
+            ></i>
+            <p>MongoDB</p>
+          </div>
+          <div class="skill-box">
+            <i class="bx bxl-git" style="color: #f34e1e; font-size: 40px"></i>
+            <p>Git</p>
+          </div>
+          <div class="skill-box">
+            <i
+              class="bx bxl-github"
+              style="color: #ffffff; font-size: 40px"
+            ></i>
+            <p>GitHub</p>
+          </div>
         </div>
-       <center> <div class="skillss">
-            <h1 class="heading2">Professional Skills</h1>
-            <div class="profe">
-                <div class="box">
-                    <div class="circle" data-dots="80" data-percent="80"></div>
-                    <div class="text">
-                        <big>80%</big>
-                        <small>Communication skill</small>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="circle" data-dots="80" data-percent="65"></div>
-                    <div class="text">
-                        <big>65%</big>
-                        <small>Problem Solving</small>
-                    </div>
-                </div>
+      </div>
+      <center>
+        <div class="skillss">
+          <h1 class="heading2">Professional Skills</h1>
+          <div class="profe">
+            <div class="box">
+              <div class="circle" data-dots="80" data-percent="80"></div>
+              <div class="text">
+                <big>80%</big>
+                <small>Communication skill</small>
+              </div>
             </div>
+            <div class="box">
+              <div class="circle" data-dots="80" data-percent="65"></div>
+              <div class="text">
+                <big>65%</big>
+                <small>Problem Solving</small>
+              </div>
+            </div>
+          </div>
         </div>
-        </center>
+      </center>
     </section>
     <!-- Project Section -->
-<section id="project" class="reveal-up">
-  <h1>
-    <center style="font-size: 50px;">
-      My <span style="color: rgb(27, 137, 206);">Projects</span>
-    </center>
-  </h1>
+    <section id="project" class="reveal-up">
+      <h1>
+        <center style="font-size: 50px">
+          My <span style="color: rgb(27, 137, 206)">Projects</span>
+        </center>
+      </h1>
 
-  <div id="mainProject" class="mainProject">
-    <!-- 1) Talent-Bridge (Placement Portal) -->
-    <div class="eachproject">
-      <center>
-        <div class="projectss">
-          <img src="./Assets//Talent-bridge.png" alt="Talent-Bridge Placement Portal" class="imgProject" />
-          <div class="projectdiscription">
-            Talent‑Bridge is a placement portal that helps job seekers prepare for placements and apply to curated roles with streamlined workflows, shortlists, and smart updates to keep preparation on track and applications organized.
-          </div>
-          <button class="pbtn">
-            <a href="https://github.com/LokeshWagh/TalentBridge" target="_blank" rel="noopener" style="color:#000;">Source code</a>
-          </button>
-          <button class="pbtn">
-            <a href="https://github.com/Lokeshwagh" target="_blank" rel="noopener" style="color:#000;">Link</a>
-          </button>
+      <div id="mainProject" class="mainProject">
+        <!-- 1) Talent-Bridge (Placement Portal) -->
+        <div class="eachproject">
+          <center>
+            <div class="projectss">
+              <img
+                src="./Assets//Talent-bridge.png"
+                alt="Talent-Bridge Placement Portal"
+                class="imgProject"
+              />
+              <div class="projectdiscription">
+                Talent‑Bridge is a placement portal that helps job seekers
+                prepare for placements and apply to curated roles with
+                streamlined workflows, shortlists, and smart updates to keep
+                preparation on track and applications organized.
+              </div>
+              <button class="pbtn">
+                <a
+                  href="https://github.com/LokeshWagh/TalentBridge"
+                  target="_blank"
+                  rel="noopener"
+                  style="color: #000"
+                  >Source code</a
+                >
+              </button>
+              <button class="pbtn">
+                <a
+                  href="https://github.com/Lokeshwagh"
+                  target="_blank"
+                  rel="noopener"
+                  style="color: #000"
+                  >Link</a
+                >
+              </button>
+            </div>
+          </center>
         </div>
-      </center>
-    </div>
 
-    <!-- 2) LiveStock Cattle Hub -->
-    <div class="eachproject">
-      <center>
-        <div class="projectss">
-          <img src="/Assets/livestock.png" alt="LiveStock Cattle Hub" class="imgProject" />
-          <div class="projectdiscription">
-            LiveStock Cattle Hub is a trusted digital marketplace where farmers and buyers can list, discover, and trade cattle with transparent details, verified profiles, and helpful blogs—bringing efficiency to a space dominated by offline markets.
-          </div>
-          <button class="pbtn">
-            <a href="https://github.com/Lokeshwagh/LiveStock-Cattlehub" target="_blank" rel="noopener" style="color:#000;">Source code</a>
-          </button>
-          <button class="pbtn">
-            <a href="https://live-stock-r9vn-jg8rmowc2-team-ezic0dess-projects.vercel.app/" target="_blank" rel="noopener" style="color:#000;">Link</a>
-          </button>
+        <!-- 2) LiveStock Cattle Hub -->
+        <div class="eachproject">
+          <center>
+            <div class="projectss">
+              <img
+                src="/Assets/livestock.png"
+                alt="LiveStock Cattle Hub"
+                class="imgProject"
+              />
+              <div class="projectdiscription">
+                LiveStock Cattle Hub is a trusted digital marketplace where
+                farmers and buyers can list, discover, and trade cattle with
+                transparent details, verified profiles, and helpful
+                blogs—bringing efficiency to a space dominated by offline
+                markets.
+              </div>
+              <button class="pbtn">
+                <a
+                  href="https://github.com/Lokeshwagh/LiveStock-Cattlehub"
+                  target="_blank"
+                  rel="noopener"
+                  style="color: #000"
+                  >Source code</a
+                >
+              </button>
+              <button class="pbtn">
+                <a
+                  href="https://live-stock-r9vn-jg8rmowc2-team-ezic0dess-projects.vercel.app/"
+                  target="_blank"
+                  rel="noopener"
+                  style="color: #000"
+                  >Link</a
+                >
+              </button>
+            </div>
+          </center>
         </div>
-      </center>
-    </div>
 
-    <!-- 3) E‑Learning Platform -->
-    <div class="eachproject">
-      <center>
-        <div class="projectss">
-          <img src="elerarn.jpg" alt="E‑Learning Platform" class="imgProject" />
-          <div class="projectdiscription">
-            A modular E‑Learning platform with course management, authenticated access, and structured content delivery for learners to progress through topics with clarity and pace.
-          </div>
-          <button class="pbtn">
-            <a href="https://github.com/Lokeshwagh/E_Learning-Management-System" target="_blank" rel="noopener" style="color:#000;">Source code</a>
-          </button>
-          <button class="pbtn">
-            <a href="https://github.com/Lokeshwagh/E_Learning-Management-System" target="_blank" rel="noopener" style="color:#000;">Link</a>
-          </button>
+        <!-- 3) E‑Learning Platform -->
+        <div class="eachproject">
+          <center>
+            <div class="projectss">
+              <img
+                src="elerarn.jpg"
+                alt="E‑Learning Platform"
+                class="imgProject"
+              />
+              <div class="projectdiscription">
+                A modular E‑Learning platform with course management,
+                authenticated access, and structured content delivery for
+                learners to progress through topics with clarity and pace.
+              </div>
+              <button class="pbtn">
+                <a
+                  href="https://github.com/Lokeshwagh/E_Learning-Management-System"
+                  target="_blank"
+                  rel="noopener"
+                  style="color: #000"
+                  >Source code</a
+                >
+              </button>
+              <button class="pbtn">
+                <a
+                  href="https://github.com/Lokeshwagh/E_Learning-Management-System"
+                  target="_blank"
+                  rel="noopener"
+                  style="color: #000"
+                  >Link</a
+                >
+              </button>
+            </div>
+          </center>
         </div>
-      </center>
-    </div>
 
-    <!-- 4) Easyhunur (Technician Hiring Platform) -->
-    <div class="eachproject">
-      <center>
-        <div class="projectss">
-          <img src="easyhunur.png" alt="Easyhunur Technician Hiring" class="imgProject" />
-          <div class="projectdiscription">
-            Easyhunur is a digital platform to find and hire skilled technicians for home services with clear categories, simple booking, and responsive support for reliable on‑time service.
-          </div>
-          <button class="pbtn">
-            <a href="https://github.com/Lokeshwagh" target="_blank" rel="noopener" style="color:#000;">Source code</a>
-          </button>
-          <button class="pbtn">
-            <a href="https://easyhunur.com/" target="_blank" rel="noopener" style="color:#000;">Link</a>
-          </button>
+        <!-- 4) Easyhunur (Technician Hiring Platform) -->
+        <div class="eachproject">
+          <center>
+            <div class="projectss">
+              <img
+                src="easyhunur.png"
+                alt="Easyhunur Technician Hiring"
+                class="imgProject"
+              />
+              <div class="projectdiscription">
+                Easyhunur is a digital platform to find and hire skilled
+                technicians for home services with clear categories, simple
+                booking, and responsive support for reliable on‑time service.
+              </div>
+              <button class="pbtn">
+                <a
+                  href="https://github.com/Lokeshwagh"
+                  target="_blank"
+                  rel="noopener"
+                  style="color: #000"
+                  >Source code</a
+                >
+              </button>
+              <button class="pbtn">
+                <a
+                  href="https://easyhunur.com/"
+                  target="_blank"
+                  rel="noopener"
+                  style="color: #000"
+                  >Link</a
+                >
+              </button>
+            </div>
+          </center>
         </div>
-      </center>
-    </div>
 
-    <!-- 5) GitHub Profile Reviewer (AI) -->
-    <div class="eachproject">
-      <center>
-        <div class="projectss">
-          <img src="/Assets/githubProfileReview.png" alt="GitHub Profile Reviewer" class="imgProject" />
-          <div class="projectdiscription">
-            GitHub Profile Reviewer is an AI tool that generates practical, accurate feedback on GitHub profiles to help students and hiring teams quickly assess strengths, gaps, and next actions.
-          </div>
-          <button class="pbtn">
-            <a href="https://github.com/Lokeshwagh" target="_blank" rel="noopener" style="color:#000;">Source code</a>
-          </button>
-          <button class="pbtn">
-            <a href="https://githubprofilereviewer.vercel.app/" target="_blank" rel="noopener" style="color:#000;">Link</a>
-          </button>
+        <!-- 5) GitHub Profile Reviewer (AI) -->
+        <div class="eachproject">
+          <center>
+            <div class="projectss">
+              <img
+                src="/Assets/githubProfileReview.png"
+                alt="GitHub Profile Reviewer"
+                class="imgProject"
+              />
+              <div class="projectdiscription">
+                GitHub Profile Reviewer is an AI tool that generates practical,
+                accurate feedback on GitHub profiles to help students and hiring
+                teams quickly assess strengths, gaps, and next actions.
+              </div>
+              <button class="pbtn">
+                <a
+                  href="https://github.com/Lokeshwagh"
+                  target="_blank"
+                  rel="noopener"
+                  style="color: #000"
+                  >Source code</a
+                >
+              </button>
+              <button class="pbtn">
+                <a
+                  href="https://githubprofilereviewer.vercel.app/"
+                  target="_blank"
+                  rel="noopener"
+                  style="color: #000"
+                  >Link</a
+                >
+              </button>
+            </div>
+          </center>
         </div>
-      </center>
-    </div>
-    <div class="eachproject">
-      <center>
-        <div class="projectss">
-          <img src="/Assets/india.png" alt="GitHub Profile Reviewer" class="imgProject" />
-          <div class="projectdiscription">
-            Knowledge checker the is Online Quiz Application where the quiz is end in 40 sec you have to answer it in this time period
-          </div>
-          <button class="pbtn">
-            <a href="https://github.com/Lokeshwagh" target="_blank" rel="noopener" style="color:#000;">Source code</a>
-          </button>
-          <button class="pbtn">
-            <a href="https://quizonhistoryofindia.netlify.app/" target="_blank" rel="noopener" style="color:#000;">Link</a>
-          </button>
+        <div class="eachproject">
+          <center>
+            <div class="projectss">
+              <img
+                src="/Assets/india.png"
+                alt="GitHub Profile Reviewer"
+                class="imgProject"
+              />
+              <div class="projectdiscription">
+                Knowledge checker the is Online Quiz Application where the quiz
+                is end in 40 sec you have to answer it in this time period
+              </div>
+              <button class="pbtn">
+                <a
+                  href="https://github.com/Lokeshwagh"
+                  target="_blank"
+                  rel="noopener"
+                  style="color: #000"
+                  >Source code</a
+                >
+              </button>
+              <button class="pbtn">
+                <a
+                  href="https://quizonhistoryofindia.netlify.app/"
+                  target="_blank"
+                  rel="noopener"
+                  style="color: #000"
+                  >Link</a
+                >
+              </button>
+            </div>
+          </center>
         </div>
-      </center>
-    </div>
-  </div>
-</section>
-
-
-<!-- CONTACT SECTION -->
-<section id="contact" class="reveal-right">
-    <center><h1 class="contactHeading" style="color:rgb(27,137,206);">Fill <span style="color: white;">Free To</span>  contact Me</h1>
-    </center>
-  <div class="contact-grid">
-    <!-- Left column -->
-    <div class="contact-left">
-    
-      <p>If there is a role that matches the skills and experience, please reach out to discuss how to collaborate effectively on deliverables and timelines.</p>
-      <p>If any project needs to be developed, feel free to contact to plan requirements, milestones, and launch strategy together.</p>
-      <p>Mobile No: +91 7249659025</p>
-      <p>Email: lokeshwagh675@gmail.com</p>
-
-      <!-- Amravati map (no API key) -->
-      <div class="map-wrap">
-        <iframe
-          title="Amravati Map"
-          src="https://www.google.com/maps?q=Amravati&z=12&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          allowfullscreen>
-        </iframe>
       </div>
-    </div>
+    </section>
 
-    <!-- Right column -->
-   <div class="contact-right">
-    <form id="contactForm">
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" placeholder="Full name" required />
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="reveal-right">
+      <center>
+        <h1 class="contactHeading" style="color: rgb(27, 137, 206)">
+          Fill <span style="color: white">Free To</span> contact Me
+        </h1>
+      </center>
+      <div class="contact-grid">
+        <!-- Left column -->
+        <div class="contact-left">
+          <p>
+            If there is a role that matches the skills and experience, please
+            reach out to discuss how to collaborate effectively on deliverables
+            and timelines.
+          </p>
+          <p>
+            If any project needs to be developed, feel free to contact to plan
+            requirements, milestones, and launch strategy together.
+          </p>
+          <p>Mobile No: +91 7249659025</p>
+          <p>Email: lokeshwagh675@gmail.com</p>
 
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" placeholder="email@example.com" />
+          <!-- Amravati map (no API key) -->
+          <div class="map-wrap">
+            <iframe
+              title="Amravati Map"
+              src="https://www.google.com/maps?q=Amravati&z=12&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+        </div>
 
-        <label for="number">Number</label>
-        <input id="number" name="number" type="tel" placeholder="10-digit mobile" required pattern="[0-9]{10}" />
+        <!-- Right column -->
+        <div class="contact-right">
+          <form id="contactForm">
+            <label for="name">Name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Full name"
+              required
+            />
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="4" placeholder="Write message..."></textarea>
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="email@example.com"
+            />
 
-        <button type="submit" class="pbtn contact-btn">Contact</button>
-        <p id="formStatus" class="status" aria-live="polite"></p>
-    </form>
-   </div>
+            <label for="number">Number</label>
+            <input
+              id="number"
+              name="number"
+              type="tel"
+              placeholder="10-digit mobile"
+              required
+              pattern="[0-9]{10}"
+            />
 
-  </div>
-</section>
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Write message..."
+            ></textarea>
+
+            <button type="submit" class="pbtn contact-btn">Contact</button>
+            <p id="formStatus" class="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
 
     <!-- educational background -->
-    <section class="edu" id="Edu" style="height: 110vh; overflow-y: hidden;padding-top: 40px; width: 100%;" class="reveal-left">
-        <center><h1 style="font-size: 50px;">My <span style="color:#1ca3bb;">Education</span></h1>
-        <span id="spanedit" style="width: 400px;"></span>
+    <section
+      class="edu"
+      id="Edu"
+      style="height: 110vh; overflow-y: hidden; padding-top: 40px; width: 100%"
+      class="reveal-left"
+    >
+      <center>
+        <h1 style="font-size: 50px">
+          My <span style="color: #1ca3bb">Education</span>
+        </h1>
+        <span id="spanedit" style="width: 400px"></span>
         <div id="edu-row">
-            <div class="edu-content">
-                <div class="content">
-                    <div class="year">Bachler of Engineering
-                    <p><i class='bx bxs-calendar'></i>2021-25</p></div>
-                    <p>I'm Recent B.E Graduate from <br><span style="color:#e1f9ff;">Sipna college of Engineering and technology</span> <br> with 8.4 Cgpa</p>
-                </div>
+          <div class="edu-content">
+            <div class="content">
+              <div class="year">
+                Bachler of Engineering
+                <p><i class="bx bxs-calendar"></i>2021-25</p>
+              </div>
+              <p>
+                I'm Recent B.E Graduate from <br /><span style="color: #e1f9ff"
+                  >Sipna college of Engineering and technology</span
+                >
+                <br />
+                with 8.4 Cgpa
+              </p>
             </div>
-            <div class="edu-content">
-                <div class="content">
-                  
-                    <div class="year">HSC Board
-                    <p><i class='bx bxs-calendar'></i>2020-21</p></div>
-                    <p>I was done my Higher school Education From <br><span style="color:#e1f9ff;">Adarsh MahaVidyalay</span>  <u><b><br>86%</b></u> </p>
-                </div>
+          </div>
+          <div class="edu-content">
+            <div class="content">
+              <div class="year">
+                HSC Board
+                <p><i class="bx bxs-calendar"></i>2020-21</p>
+              </div>
+              <p>
+                I was done my Higher school Education From <br /><span
+                  style="color: #e1f9ff"
+                  >Adarsh MahaVidyalay</span
+                >
+                <u
+                  ><b><br />86%</b></u
+                >
+              </p>
             </div>
-            <div class="edu-content">
-                <div class="content">
-                    <div class="year">SSC board 10th
-                    <p><i class='bx bxs-calendar'></i>2018-19 </p></div>
-                    <p>I was done My schooling From <br><b style="color:#e1f9ff;">S.F.L High school Dhamangaon Railway</b><u><b><br>78%</b></u><br></p>
-                </div>
+          </div>
+          <div class="edu-content">
+            <div class="content">
+              <div class="year">
+                SSC board 10th
+                <p><i class="bx bxs-calendar"></i>2018-19</p>
+              </div>
+              <p>
+                I was done My schooling From <br /><b style="color: #e1f9ff"
+                  >S.F.L High school Dhamangaon Railway</b
+                ><u
+                  ><b><br />78%</b></u
+                ><br />
+              </p>
             </div>
-        </div></center>
+          </div>
+        </div>
+      </center>
     </section>
-</body>
+  </body>
 </html>
